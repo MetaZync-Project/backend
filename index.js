@@ -22,7 +22,7 @@ app.use('/api/bookings', require('./routes/bookingRoutes'));
 
 
 app.get('/', (req, res) => {
-  res.send('🚀 API is running on Vercel');
+  res.send('API is running on Vercel');
 });
 
 
