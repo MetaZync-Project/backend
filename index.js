@@ -16,11 +16,14 @@ app.use(express.json());
 
 
 // API Routes
-app.use('/auth', require('./routes/authRoutes'));
-app.use('/services', require('./routes/serviceRoutes'));
-app.use('/bookings', require('./routes/bookingRoutes'));
+app.use('/api/auth', require('./routes/authRoutes'));
+app.use('/api/services', require('./routes/serviceRoutes'));
+app.use('/api/bookings', require('./routes/bookingRoutes'));
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+
+app.get('/', (req, res) => {
+  res.send('🚀 API is running on Vercel');
 });
+
+
+module.exports = app;
